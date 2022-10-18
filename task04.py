@@ -3,6 +3,8 @@ EXCELLENT_MARK = "Excellent"
 
 
 def get_feedback(mark):
+    if isinstance(mark, bool) or not (0 <= mark <= 10):
+        return -1
     result = EXCELLENT_MARK
     if mark <= 1:
         result = BAD_MARK
@@ -32,7 +34,7 @@ if __name__ == "__main__":
     assert get_feedback(1) == BAD_MARK
     assert get_feedback(2) == "unsatisfactory"
     assert get_feedback(3) == "unsatisfactory"
-    assert get_feedback(4) =="satisfactory"
+    assert get_feedback(4) == "satisfactory"
     assert get_feedback(5) == "you could better"
     assert get_feedback(6) == "you could better"
     assert get_feedback(7) == "good"
