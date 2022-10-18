@@ -19,6 +19,7 @@ def get_feedback(mark):
     return result
 
 
+
 if __name__ == "__main__":
     assert get_feedback("10") == -1
     assert get_feedback(7.5) == -1
